@@ -18,7 +18,9 @@ const config: ForgeConfig = {
     new MakerSquirrel({}),
     new MakerZIP({}, ['darwin']),
     // new MakerDMG({}),
-    new MakerPKG({}),
+    new MakerPKG({
+      identity: null, // 跳过签名
+    }),
     new MakerRpm({}),
     new MakerDeb({}),
   ],
