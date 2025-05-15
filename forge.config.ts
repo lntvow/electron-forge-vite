@@ -8,6 +8,7 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses'
 import { FuseV1Options, FuseVersion } from '@electron/fuses'
 import { MakerDMG } from '@electron-forge/maker-dmg'
 import { MakerPKG } from '@electron-forge/maker-pkg'
+
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
@@ -17,7 +18,7 @@ const config: ForgeConfig = {
     new MakerSquirrel({}),
     new MakerZIP({}, ['darwin']),
     // new MakerDMG({}),
-    new MakerPKG({}),
+    // new MakerPKG({}),
     new MakerRpm({}),
     new MakerDeb({}),
   ],

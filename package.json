@@ -1,15 +1,22 @@
 {
   "name": "test33",
   "productName": "test33",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
+    "postinstall": "simple-git-hooks",
+    "rimraf": "rimraf ./node_modules/",
+    "commit": "git add . && git-cz && git push",
+    "release": "git add . && bumpp package.json --all --no-tag --no-print-commits",
+    "lint:eslint": "eslint \"src/**/*.{js,jsx,ts,tsx,vue}\" --fix",
+    "lint:tsc": "tsc --noEmit",
+    "lint": "eslint --ext .ts,.tsx .",
+    "ncu": "ncu -u && pnpm install",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "eslint --ext .ts,.tsx ."
+    "publish": "electron-forge publish"
   },
   "keywords": [],
   "author": {
@@ -36,11 +43,9 @@
     "@electron-forge/plugin-vite": "^7.8.1",
     "@electron-forge/publisher-github": "^7.8.1",
     "@electron/fuses": "^1.8.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@lntvow/dev": "^4.2.9",
+    "@lntvow/eslint-config": "^9.24.0",
     "electron": "36.2.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-import": "^2.31.0",
     "ts-node": "^10.9.2",
     "typescript": "~4.5.5",
     "vite": "^5.4.19"
