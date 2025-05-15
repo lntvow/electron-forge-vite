@@ -19,6 +19,7 @@ const config: ForgeConfig = {
     new MakerZIP({}, ['darwin']),
     // new MakerDMG({}),
     new MakerPKG({
+      identity: null,
       identityValidation: false, // 跳过签名验证
     }),
     new MakerRpm({}),
