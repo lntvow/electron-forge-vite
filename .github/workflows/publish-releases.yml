@@ -31,10 +31,19 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: 配置 Git 走 HTTPS 并带 token
+      - name: 配置 Git URL 重写（macOS/Linux）
+        if: runner.os != 'Windows'
+        shell: bash
         run: |
-          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "ssh://git@github.com/"
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf git@github.com:
+          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
+
+      - name: 配置 Git URL 重写（Windows）
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          git config --global url."https://x-access-token:$Env:GITHUB_TOKEN@github.com/".insteadOf "git@github.com:"
+          git config --global url."https://x-access-token:$Env:GITHUB_TOKEN@github.com/".insteadOf "ssh://git@github.com/"
 
       - run: pnpm install
       - run: pnpm build
