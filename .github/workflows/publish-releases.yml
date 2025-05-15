@@ -48,5 +48,5 @@ jobs:
 
       - name: 发布 Electron 应用（${{ matrix.os }}）
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
