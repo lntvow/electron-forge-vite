@@ -8,7 +8,7 @@ on:
   push:
 
 jobs:
-  publish:
+  publish-releases:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
