@@ -1,7 +1,6 @@
 {
-  "name": "test33",
-  "productName": "test33",
-  "version": "1.1.0",
+  "name": "electron_forge_vite",
+  "version": "1.1.1",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
