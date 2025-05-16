@@ -6,10 +6,6 @@ import { MakerRpm } from '@electron-forge/maker-rpm'
 import { VitePlugin } from '@electron-forge/plugin-vite'
 import { FusesPlugin } from '@electron-forge/plugin-fuses'
 import { FuseV1Options, FuseVersion } from '@electron/fuses'
-import { MakerDMG } from '@electron-forge/maker-dmg'
-import { MakerPKG } from '@electron-forge/maker-pkg'
-import { MakerWix } from '@electron-forge/maker-wix'
-import { version } from './package.json'
 
 const config: ForgeConfig = {
   packagerConfig: {
@@ -17,23 +13,7 @@ const config: ForgeConfig = {
   },
 
   rebuildConfig: {},
-  makers: [
-    new MakerSquirrel({}),
-    new MakerWix({
-      name: `electron-forge-vite-${version}`,
-      ui: {
-        chooseDirectory: true,
-      },
-    }),
-    new MakerZIP({}, ['darwin']),
-    // new MakerDMG({}),
-    // new MakerPKG({
-    //   identity: null,
-    //   identityValidation: false, // 跳过签名验证
-    // }),
-    new MakerRpm({}),
-    new MakerDeb({}),
-  ],
+  makers: [new MakerSquirrel({}), new MakerZIP({}, ['darwin']), new MakerRpm({}), new MakerDeb({})],
   plugins: [
     new VitePlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
