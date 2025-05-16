@@ -18,7 +18,11 @@ const config: ForgeConfig = {
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),
-    new MakerWix({}),
+    new MakerWix({
+      ui: {
+        chooseDirectory: true,
+      },
+    }),
     new MakerZIP({}, ['darwin']),
     // new MakerDMG({}),
     // new MakerPKG({

@@ -1,4 +1,4 @@
-name: publish-windows
+name: publish-releases
 
 permissions:
   contents: write
@@ -8,9 +8,14 @@ on:
   push:
 
 jobs:
-  publish-windows:
-    runs-on: windows-latest
+  publish:
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 10
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        # 如果不同系统要传不同参数，也可以写：
+        # arch: [x64, arm64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,9 +42,16 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Publish Electron app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish
+        run: |
+          # 如果只有 mac 需要指定架构
+          if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            npm run publish -- --arch=x64,arm64
+          else
+            npm run publish
+          fi
