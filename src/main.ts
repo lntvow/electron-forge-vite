@@ -8,7 +8,7 @@ import { updateElectronApp } from 'update-electron-app'
 let num = 1
 setInterval(() => {
   log.info(`Hello from main process => ${num++}`)
-}, 3000)
+}, 60 * 1000)
 
 updateElectronApp({
   notifyUser: true,
