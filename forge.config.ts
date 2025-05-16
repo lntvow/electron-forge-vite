@@ -13,6 +13,7 @@ const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
   },
+
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),

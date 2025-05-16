@@ -44,7 +44,14 @@ jobs:
 
       - run: pnpm install
 
+      - name: Publish Electron app (macOS)
+        if: matrix.os == 'macos-latest'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run publish -- --arch=x64,arm64
+
       - name: Publish Electron app (${{ matrix.os }})
+        if: matrix.os != 'macos-latest'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
