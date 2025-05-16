@@ -111,7 +111,7 @@ jobs:
 
       - run: pnpm install
 
-      - name: Publish Electron app (Ubuntu)
+      - name: Publish Electron app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run publish
