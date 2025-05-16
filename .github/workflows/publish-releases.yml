@@ -42,7 +42,7 @@ jobs:
       - name: Publish Electron app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run publish --arch=x64,arm64
+        run: npm run publish -- --arch=x64,arm64
 
   publish-windows:
     runs-on: windows-latest

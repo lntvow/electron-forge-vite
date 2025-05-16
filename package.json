@@ -1,6 +1,6 @@
 {
   "name": "electron_forge_vite",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
