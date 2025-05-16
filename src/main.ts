@@ -5,6 +5,8 @@ import * as log from 'electron-log'
 
 import { updateElectronApp } from 'update-electron-app'
 
+log.info(`Hello from main process`)
+
 let num = 1
 setInterval(() => {
   log.info(`Hello from main process => ${num++}`)
