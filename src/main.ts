@@ -1,7 +1,14 @@
-import { app, BrowserWindow } from 'electron'
 import path from 'node:path'
+import { app, BrowserWindow } from 'electron'
 import started from 'electron-squirrel-startup'
+import * as log from 'electron-log'
 
+import { updateElectronApp } from 'update-electron-app'
+
+updateElectronApp({
+  notifyUser: true,
+  logger: log,
+})
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit()
