@@ -66,10 +66,6 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/publisher-github',
       config: {
-        repository: {
-          owner: 'lntvow',
-          name: 'electron-forge-vite',
-        },
         prerelease: false,
         draft: false,
       },

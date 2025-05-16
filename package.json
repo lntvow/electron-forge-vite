@@ -1,6 +1,6 @@
 {
   "name": "electron-forge-vite",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -16,6 +16,9 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish"
+  },
+  "repository": {
+    "url": "https://github.com/lntvow/electron-forge-vite"
   },
   "keywords": [],
   "author": {
