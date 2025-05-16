@@ -18,7 +18,7 @@
     "publish": "electron-forge publish"
   },
   "repository": {
-    "url": "https://github.com/lntvow/test33"
+    "url": "https://github.com/lntvow/electron_forge_vite"
   },
   "keywords": [],
   "author": {
