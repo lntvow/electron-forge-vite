@@ -8,6 +8,7 @@ import { updateElectronApp } from 'update-electron-app'
 updateElectronApp({
   notifyUser: true,
   logger: log,
+  updateInterval: '5',
 })
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
