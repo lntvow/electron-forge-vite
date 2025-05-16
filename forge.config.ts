@@ -68,7 +68,7 @@ const config: ForgeConfig = {
       config: {
         repository: {
           owner: 'lntvow',
-          name: 'electron_forge_vite',
+          name: 'electron-forge-vite',
         },
         prerelease: false,
         draft: false,
