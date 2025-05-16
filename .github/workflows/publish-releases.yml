@@ -46,6 +46,7 @@ jobs:
         run: pnpm install
 
       - name: Publish Electron app
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
