@@ -1,6 +1,6 @@
 {
   "name": "electron-forge-vite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "My Electron application description",
   "main": ".vite/build/main.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "lint:tsc": "tsc --noEmit",
     "lint": "eslint --ext .ts,.tsx .",
     "ncu": "ncu -u && pnpm install",
-    "start": "electron-forge start",
+    "dev": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish"
