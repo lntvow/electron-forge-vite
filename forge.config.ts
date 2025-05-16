@@ -10,6 +10,8 @@ import { MakerDMG } from '@electron-forge/maker-dmg'
 import { MakerPKG } from '@electron-forge/maker-pkg'
 import { MakerWix } from '@electron-forge/maker-wix'
 
+import { version } from 'package.json'
+
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
@@ -19,6 +21,7 @@ const config: ForgeConfig = {
   makers: [
     new MakerSquirrel({}),
     new MakerWix({
+      name: `electron-forge-vite-${version}`,
       ui: {
         chooseDirectory: true,
       },
