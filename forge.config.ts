@@ -8,6 +8,7 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses'
 import { FuseV1Options, FuseVersion } from '@electron/fuses'
 import { MakerDMG } from '@electron-forge/maker-dmg'
 import { MakerPKG } from '@electron-forge/maker-pkg'
+import { MakerWix } from '@electron-forge/maker-wix'
 
 const config: ForgeConfig = {
   packagerConfig: {
@@ -17,6 +18,7 @@ const config: ForgeConfig = {
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),
+    new MakerWix({}),
     new MakerZIP({}, ['darwin']),
     // new MakerDMG({}),
     // new MakerPKG({
